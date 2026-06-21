@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favour Ezeonyebuchi-Student Portfolio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#academic">Academic Planner</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+    <header id="home"> 
+        <img src="images/my picture.jpeg" alt="My picture">
+        <div class="hero-text">
+            <h1>Favour Ezeonyebuchi</h1>
+            <h3>Software Engineering Student | DevOps Trainee | Entrepreneur</h3>
+            <h2>Welcome to My Student Portfolio</h2>
+            <p>
+            I am Favour Ezeonyebuchi, a Software Engineering student at Miva Open University, DevOps trainee, and a graduate of Metallurgical Engineering from Yaba College of Technology Yabatech, entrepreneur and founder of Kosivira. I am passionate about innovation, technology, and problem-solving, with a vision to develop impactful solutions that improve lives across different sectors. My goal is to become a globally recognized technology leader and entrepreneur.
+            </p>
+            <h3>Listen to My Introduction</h3>
+
+            <audio controls>
+                <source src="audio/Introduction.mp4" type="audio/mp4">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        </header>
+        <section id="about">
+            <h2>About Me</h2>
+
+        <h3>Educational Background</h3>
+        <p>
+            I am currently studying Software Engineering at Miva Open University and I am a graduate of Metallurgical Engineering from Yaba College of Technology Yabatech.
+        </p>
+        <h3>Career Aspirations</h3>
+        <p>
+            My goal is to become globally recognized technology entrepreneur and software engineer.
+        </p>
+
+        <h3>Technical Skills</h3>
+        <ul>
+            <li>Vehicle Inspection & Diagnostics</li>
+            <li>Automotive Maintenance Support</li>
+            <li>Software Engineering (In progress)</li>
+            <li>DevOps Tools: Docker, Kubernetes, Jenkins</li>
+            <li>Microsoft Word & Excel</li>
+            <li>Data entry & Data Management</li>
+            <li>Inventory & Warehouse Management</li>
+            <li>CRM Systems</li>
+            <li>Customer Service & Administrative Support</li>
+            <li>Github & Website Deployment</li>
+            <li>Version Control: Git</li>
+            <li>HTML & CSS</li>
+        </ul>
+
+        <h3>Hobbies & Interests</h3>
+        <ul>
+            <li>Technology Research</li>
+            <li>Entrepreneurship</li>
+            <li>Problem-solving</li>
+            <li>Traveling</li>
+            <li>Cooking</li>
+            <li>Innovation</li>
+            <li>Community Engagement</li>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-card">
+
+           <div class="project-info">
+
+               <h3>Student Portfolio Website</h3>
+
+               <p>
+                   Responsive portfolio website built with HTML, CSS and JavaScript.
+               </p>
+
+               <a href="https://portfolio-demo.com" target="_blank">
+                   View Project
+                </a>
+            </div>
+
+             <img src="images/portfolio-project.png"
+                  alt="Portfolio Website Screenshot">
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-info">
+
+                <h3>Kosivira DetectAid</h3>
+
+                <p>
+                    AI-powered navigation system for visually impaired individuals.
+                </p>
+
+                <a href="https://www.kosivira.xyz/" target="_blank">
+                    View Project
+                </a>
+            </div>
+
+            <img src="images/kosivira-project.png"
+                 alt="Kosivira DetectAid">
+
+        </div>
+
+       <div class="project-card">
+
+            <div class="project-info">
+
+                <h3>Academic Planner</h3>
+
+            <p>
+               A web-based academic planner to help students manage tasks and schedules.
+            </p>
+
+            <a href="https://planner-demo.com" target="_blank">
+                View Project
+            </a>
+        </div>
+
+        <img src="images/planner-project.png"
+             alt="Academic Planner">
+
+    </div> 
+    </section>
+
+    <section id="academic">
+        <h2>Academic Planner</h2>
+        
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="taskList"></ul>
+    </section>
+
+    <section id="contact" class="contact-section">
+
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+
+            <p><strong>Email:</strong><br>
+            favourezeonyebuchi4@gmail.com</p>
+
+            <p><strong>Phone:</strong><br>
+            +234 9036716230</p>
+
+            <p><strong>Location:</strong><br>
+            Lagos, Nigeria</p>
+
+            <p><strong>WhatsApp:</strong><br>
+            Message me on WhatsApp</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Let's Work Together</h2>
+
+            <p>
+                Whether you're interested in collaboration, software development, DevOps proects, or tecnology innovation, feel free to contact me.   
+            </p>
+
+            <form>
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="email" placeholder="Email Address">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+<script>
+function addTask() {
+    let input = document.getElementById("taskInput");
+    let task = input.value;
+
+    if (task === "") {
+        alert("Please enter a task");
+        return;
+    }
+
+    let li = document.createElement("li");
+    li.innerHTML = `
+        <span>
+            ${task}
+        </span>
+
+        <button onclick="toggleComplete(this.parentElement.querySelector('span'))">
+            Complete
+        </button>
+
+        <button onclick="deleteTask(this)">
+            Delete
+        </button>
+    `;
+
+    document.getElementById("taskList").appendChild(li);
+
+    input.value = "";
+}
+
+function deleteTask(button) {
+    button.parentElement.remove();
+}
+
+function toggleComplete(task) {
+    task.style.textDecoration =
+        task.style.textDecoration === "line-through"
+        ? "none"
+        : "line-through";
+}
+</script>
+</body>
+</html>
